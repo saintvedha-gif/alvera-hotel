@@ -1,4 +1,5 @@
 import { Instagram } from "lucide-react";
+import Link from "next/link";
 import { hotel } from "@/config/hotel";
 
 export default function Footer() {
@@ -13,12 +14,12 @@ export default function Footer() {
         <div>
           <p className="mb-3 text-xs uppercase tracking-widest text-gold">Explorar</p>
           <ul className="space-y-2 text-sm text-cream/80">
-            <li><a href="/habitaciones">Habitaciones</a></li>
-            <li><a href="/experiencias">Experiencias</a></li>
-            <li><a href="/gastronomia">Gastronomía</a></li>
-            <li><a href="/galeria">Galería</a></li>
-            <li><a href="/nosotros">Nosotros</a></li>
-            <li><a href="/ubicacion">Ubicación</a></li>
+            <li><Link href="/habitaciones">Habitaciones</Link></li>
+            <li><Link href="/experiencias">Experiencias</Link></li>
+            <li><Link href="/gastronomia">Gastronomía</Link></li>
+            <li><Link href="/galeria">Galería</Link></li>
+            <li><Link href="/nosotros">Nosotros</Link></li>
+            <li><Link href="/ubicacion">Ubicación</Link></li>
           </ul>
         </div>
 
@@ -40,7 +41,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-12 max-w-7xl border-t border-cream/10 pt-6 text-xs text-cream/50">
-        © {new Date().getFullYear()} {hotel.name}. Todos los derechos reservados. · <a href="/politicas">Políticas</a>
+        © {new Date().getFullYear()} {hotel.name}. Todos los derechos reservados. · <Link href="/politicas">Políticas</Link>
       </div>
     </footer>
   );

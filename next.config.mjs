@@ -8,7 +8,6 @@ const nextConfig = {
     ],
   },
   basePath: "/alvera-hotel",
-  assetPrefix: "/alvera-hotel/",
 };
 
 export default nextConfig;

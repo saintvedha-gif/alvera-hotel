@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { hotel } from "@/config/hotel";
@@ -39,18 +40,18 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-        <a
+        <Link
           href="/"
           className={`font-serif text-lg tracking-widest ${
             solid ? "text-ink" : "text-cream"
           }`}
         >
           {hotel.name}
-        </a>
+        </Link>
 
         <nav className="hidden gap-8 md:flex">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               className={`text-xs uppercase tracking-widest transition hover:text-gold ${
@@ -58,11 +59,11 @@ export default function Navbar() {
               }`}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
+        <Link
           href="/reservar"
           className={`hidden border px-5 py-2 text-xs uppercase tracking-widest transition md:block ${
             solid
@@ -71,7 +72,7 @@ export default function Navbar() {
           }`}
         >
           Reservar
-        </a>
+        </Link>
 
         <button
           onClick={() => setOpen(true)}
@@ -92,22 +93,22 @@ export default function Navbar() {
           </div>
           <nav className="mt-16 flex flex-1 flex-col items-center justify-center gap-8">
             {links.map((l) => (
-              <a
+              <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="font-serif text-2xl"
               >
                 {l.label}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href="/reservar"
               onClick={() => setOpen(false)}
               className="mt-6 border border-gold px-8 py-3 text-xs uppercase tracking-widest text-gold"
             >
               Reservar
-            </a>
+            </Link>
           </nav>
         </div>
       )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Check } from "lucide-react";
 import { rooms } from "@/data/rooms";
@@ -81,12 +82,12 @@ export default function BookingForm() {
           {selectedRoom?.name}. Nuestro equipo te contactará a {data.email} o{" "}
           {data.phone} para confirmar la disponibilidad.
         </p>
-        <a
+        <Link
           href="/"
           className="mt-8 inline-block border border-ink px-8 py-3 text-xs uppercase tracking-widest text-ink hover:bg-ink hover:text-cream"
         >
           Volver al inicio
-        </a>
+        </Link>
       </div>
     );
   }
